@@ -1,0 +1,50 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage{color,xcolor}
+\usepackage{tikz,graphicx}
+
+\usetikzlibrary{automata,positioning}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+\input{vertgrid}
+
+\renewcommand{\hAt}{5}
+\renewcommand{\lAt}{3}
+
+\def\datachild{ }
+\def\actual{ }
+
+\renewcommand{\datachild}{Глобглогабгалаб, который очень любил книги}
+\renewcommand{\actual}{успешное изучение} %прохождение // успешное изучение // выдающееся освоение
+
+\def\certF#1#2#3{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=29cm]{fon}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{22 мая 2019\,г.};
+	\draw (7.7,-5.2) node[right]{Фокеева~Д.\,В.};
+	
+	\draw (0, 1) node{выдан};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы II полугодия};
+	\draw (0, -2.45) node{первой ступени первого года обучения};
+	\draw (0, -3.4) node{(балл за итоговую работу — #3)};
+} \end{center}}
+
+
+%%%%%%%%%%%%%%%%
+
+\def\ul#1{\underline{\hspace{#1 cm}}}
+
+\renewcommand{\datachild}{\ul{3.8} \\ \ul{3.8}}
+\certF{\ul{12.5}}{\ul{6.4}}{\ul{1.8}}
+
+\end{document}
