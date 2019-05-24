@@ -1,0 +1,78 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage{color,xcolor}
+\usepackage{tikz,graphicx}
+
+\usetikzlibrary{automata,positioning}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+\input{vertgrid}
+
+\renewcommand{\hAt}{5}
+\renewcommand{\lAt}{3}
+
+\def\datachild{ }
+\def\actual{ }
+
+\renewcommand{\datachild}{Глобглогабгалаб, который очень любил книги}
+\renewcommand{\actual}{успешное изучение} %прохождение // успешное изучение // выдающееся освоение
+
+\def\certBeg#1#2#3{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=29cm]{fon}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{21 мая 2019\,г.};
+	\draw (7.7,-5.2) node[right]{Золотов~Б.\,А.};
+	
+	\draw (0, 1) node{выдан};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы II полугодия};
+	\draw (0, -2.45) node{ступени обучения 1.2};
+	\draw (0, -3.4) node{(балл за итоговую работу — #3)};
+} \end{center}}
+
+\def\certProd#1#2#3{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=29cm]{fon}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{21 мая 2019\,г.};
+	\draw (7.7,-5.2) node[right]{Золотов~Б.\,А.};
+	
+	\draw (0, 1) node{выдан};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы II полугодия};
+	\draw (0, -2.45) node{второй ступени второго года обучения};
+	\draw (0, -3.4) node{(балл за итоговую работу — #3)};
+} \end{center}}
+
+%%%%%%%%%%%%%%%%
+
+\renewcommand{\datachild}{Лучший результат итоговой работы}
+\certProd{Кузнецову Никите}{выдающееся освоение}{$9+1+15.9=25.9,\ R1$}
+
+\renewcommand{\datachild}{За победоносное участие в матбоях}
+\certProd{Мягкову Петру}{успешное изучение}{$9+2+7.2=18.2,\ R0.7027$}
+
+\renewcommand{\datachild}{За лучшие разборы задач у доски}
+\certProd{Дорожкиной Вере}{успешное изучение}{$6.5+0+7=13.5,\ R0.52126$}
+
+\renewcommand{\datachild}{За самые неожиданные решения}
+\certProd{Мело Лапшину Бориславу}{успешное изучение}{$0+0+7.5=7.5,\ R0.28958$}
+
+\renewcommand{\datachild}{\ }
+\certProd{Коржавину Ивану}{прохождение}{$2+0+4=6,\ R0.23166$}
+\certProd{Горбачёву Яромиру}{прохождение}{\underline{\hspace{1.6cm}}\,}
+\certProd{Филиппову Геннадию}{прохождение}{\underline{\hspace{1.6cm}}\,}
+
+\end{document}
