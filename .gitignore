@@ -9,3 +9,4 @@
 *.hi
 *.o
 *.synctex(busy)
+*.ods#
