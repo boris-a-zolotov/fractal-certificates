@@ -1,0 +1,18 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{skis}
+
+\begin{document}
+
+\begin{center}
+\tikz{
+	\draw[very thick] (0,0) circle[radius=2.6cm];
+	\filldraw (0,0) circle[radius=1.2mm];
+	\foreach \x in {1,...,12} {
+		\draw (90 - 30*\x : 2.2) node{\Large\x};
+		\draw[thick,->] (0,0) -- (-30:1.9);
+		\draw[thick,->] (0,0) -- (80:1.55);
+	}
+}
+\end{center}
+
+\end{document}
