@@ -1,0 +1,42 @@
+\documentclass[17pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage{color,xcolor}
+\usepackage{tikz,graphicx}
+
+\usetikzlibrary{automata,positioning}
+
+\input{mspec}
+
+\begin{document}
+
+\input{vertgrid}
+
+\newcommand{\restab}[3]{\begin{tabular}{ll}
+	Задач решено & #1 \\
+	Зачет по задачам & #2 \\
+	Зачет по теории & #3 \\
+\end{tabular}}
+
+\newcommand{\certAkadem}[5]{\vfill\eject \begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=28.8cm]{o#1}};
+  %	\vertgrid; \gorgrid;
+	\draw (3.9,-6.1) node[right]{Золотов Б.\,А.}
+	      (-2.4,-3.87) node[right]{21}
+	      (-0.7,-3.87) node[right]{22}
+	      (4.5,-2.6) node[right]{3.1}
+	      (0,0) node{{\Large #2}}
+	      (6.05,0.4) node[right]{{\footnotesize \restab{#3}{#4}{#5}}}
+	      (8.1,-6.3) node{\includegraphics[height=1.7cm]{sign}};
+} \end{center}}
+
+% номер картинки, ФИО, задачи, письменно, устно
+
+\certAkadem{3}{Виденичева Марьяна}{33,83}{3\,/\,8}{   }
+\certAkadem{3}{Герасимчик Глеб}{77,5}{3\,/\,8}{   }
+\certAkadem{1}{Гришин Алексей}{145}{5\,/\,8}{2,2\,/\,3}
+\certAkadem{2}{Ерофеев Андрей}{71,5}{5\,/\,8}{4,5\,/\,7}
+\certAkadem{2}{Самаркин Иван}{101}{5\,/\,8}{2\,/\,3}
+\certAkadem{2}{Чуносов Прохор}{91,5}{4\,/\,8}{5\,/\,6}
+
+\end{document}
