@@ -1,0 +1,52 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage{color,xcolor}
+\usepackage{tikz,graphicx,mathabx}
+
+\usetikzlibrary{automata,positioning}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+\input{vertgrid}
+
+\renewcommand{\hAt}{5}
+\renewcommand{\lAt}{3}
+
+\def\datachild{ }
+\def\actual{ }
+
+\renewcommand{\datachild}{Глобглогабгалаб, который очень любил книги}
+\renewcommand{\actual}{выдающееся освоение}
+%	прохождение // успешное изучение // выдающееся освоение
+
+\def\certProd#1#2#3{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=29cm]{fon}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{26 декабря 2019\,г.};
+	\draw (7.7,-5.2) node[right]{Золотов~Б.\,А.};
+	
+	\draw (0, 1) node{выдан};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы I полугодия};
+	\draw (0, -2.45) node{третьей ступени первого года обучения};
+	\draw (0, -3.4) node{(балл за итоговую работу — #3)};
+} \end{center}}
+
+%%%%%%%%%%%%%%%%
+
+\renewcommand{\datachild}{$\Asterisk$ за тщательную проработку д/з}
+\certProd{Мягкову Петру}{выдающееся освоение}{17}
+
+\renewcommand{\datachild}{\ }
+\certProd{Волконской Екатерине}{успешное изучение}{10}
+\certProd{Горбачёву Яромиру}{прохождение}{5}
+
+\end{document}

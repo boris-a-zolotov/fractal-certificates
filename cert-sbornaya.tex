@@ -1,0 +1,80 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage[a4paper,landscape,margin=0mm]{geometry}
+\usepackage{color,xcolor}
+\usepackage{tikz,graphicx}
+
+\usetikzlibrary{automata,positioning}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[russian]{babel}
+
+\begin{document}
+
+\input{vertgrid}
+
+\renewcommand{\hAt}{5}
+\renewcommand{\lAt}{3}
+
+\def\datachild{ }
+\def\actual{ }
+
+\renewcommand{\datachild}{Глобглогабгалаб, который очень любил книги}
+\renewcommand{\actual}{успешное изучение} %прохождение // успешное изучение // выдающееся освоение
+
+\newcommand{\certProd}[5]{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=28.7cm]{fon}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{21 мая 2019\,г.};
+	\draw (6,-5.2) node[right]{Золотов~Б.\,А.};
+	\draw (6,-5.95) node[right]{Вальтман~А.\,П.};
+	
+	\draw (0, 1) node{награждается};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы II полугодия};
+	\draw (0, -2.45) node{сборной «Фрактала» (третья ступень, первый год)};
+	\draw (0, -3.4) node{(письм.~—~#3,\quad устн.~—~#4,\quad
+		задачи~—~#5,\quad олимп.~—~#6)};
+} \end{center}}
+
+\newcommand{\certProdP}[6]{
+\vfill\eject
+\begin{center} \tikz{
+	\draw (0,0) node{\includegraphics[width=28.7cm]{fonP}};
+%	\vertgrid; \gorgrid;
+	
+	\draw (5,3.7) node[right,text width=4.8cm]{\datachild};
+	\draw (-5,3.7) node[left]{21 мая 2019\,г.};
+	\draw (6,-5.2) node[right]{Золотов~Б.\,А.};
+	\draw (6,-5.95) node[right]{Вальтман~А.\,П.};
+	
+	\draw (0, 1) node{награждается};
+	\draw (0, -0.2) node{\Large\scshape\bfseries #1};
+	\draw (0, -1.5) node{за #2 программы II полугодия};
+	\draw (0, -2.45) node{сборной «Фрактала» (третья ступень, первый год)};
+	\draw (0, -3.4) node{(письм.~—~#3,\quad устн.~—~#4,\quad
+		задачи~—~#5,\quad олимп.~—~#6)};
+} \end{center}}
+
+%%%%%%%%%%%%%%%%
+
+\renewcommand{\datachild}{Первое место \\ на письм. экзамене \\ [0.2cm] Первое место \\ по задачам}	\certProdP{Кириллов Никита}{выдающееся освоение}{30}{6}{95,36}
+\renewcommand{\datachild}{Первое место \\ на письм. экзамене \\ [0.2cm] Третье место \\ по задачам}	\certProdP{Музафаров Марк-Антуан}{выдающееся освоение}{30}{6}{77,46}
+\renewcommand{\datachild}{Третье место \\ на письм. экзамене}	\certProdP{Мягков Пётр}{выдающееся освоение}{25}{6}{69,5}
+\renewcommand{\datachild}{Третье место \\ на письм. экзамене}	\certProdP{Филиппов Геннадий}{выдающееся освоение}{25}{5,8}{30,44}
+\renewcommand{\datachild}{ }	\certProdP{Прялкова Яна}{успешное изучение}{21,5}{6}{70,71}
+\renewcommand{\datachild}{Второе место \\ по задачам}	\certProdP{Лудзский Матвей}{выдающееся освоение}{20}{6}{94,1}
+\renewcommand{\datachild}{ }	\certProdP{Лакштанова Екатерина}{успешное изучение}{19,5}{4,6}{26,1}
+\renewcommand{\datachild}{ }	\certProdP{Кривошапов Вова}{успешное изучение}{18}{4,7}{56,38}
+\renewcommand{\datachild}{ }	\certProdP{Козловская Алиса}{успешное изучение}{17}{6}{66,91}
+\renewcommand{\datachild}{ }	\certProdP{Воробьёва Ульяна}{успешное изучение}{17}{6}{45,2}
+\renewcommand{\datachild}{ }	\certProd{Лабутина Есения }{прохождение}{15}{5,9}{73,35}
+\renewcommand{\datachild}{ }	\certProd{Затепякина Ася}{прохождение}{15}{3,9}{52,04}
+\renewcommand{\datachild}{ }	\certProd{Гнатюк Евгений }{прохождение}{14}{4,5}{32,31}
+\renewcommand{\datachild}{ }	\certProd{Лухт Яна}{прохождение}{12}{4,5}{57,25}
+
+\end{document}
